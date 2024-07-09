@@ -6,9 +6,7 @@
 > Rafael Basaglia Gimenez (13673430)  
 
  
-O projeto em questão foi desenvolvido o objetivo final de complementar o aprendizado e possibilitar a aplicação da teoria apresentada em sala de aula na disciplina de Sistemas de Controle para 
-Aeronaves I, possibilitando aos alunos um melhor domínio sobre a área. A fim de realizar de familiar-se com o funcionamento de motores e de sistemas controláveis, o projeto foi dividido em 2 
-etapas: Motor DC e Drone 2D.
+O projeto em questão foi desenvolvido o objetivo final de complementar o aprendizado e possibilitar a aplicação da teoria apresentada em sala de aula na disciplina de Sistemas de Controle para Aeronaves I, possibilitando aos alunos um melhor domínio sobre a área. A fim de realizar de familiar-se com o funcionamento de motores e de sistemas controláveis, o projeto foi dividido em 2 etapas: Motor DC e Drone 2D.
 
 ## Etapa 1 - Motor DC
 
@@ -48,7 +46,7 @@ $\eta_{mecanica} = \frac{P_{mecanica}}{P_{eletrica}}$
 $\eta_{eletrica} = \frac{P_{util}}{P_{eletrica}}$ 
 
 
-<img src="/Trabalho/eficiencias.jpg" alt="grafico eficiencias" width="400"> <img src="/Trabalho/Eficiencias medias.jpg" alt="Eficiencias medias" width="400">!
+<img src="/Trabalho/eficiencias.jpg" alt="grafico eficiencias" width="400"> <img src="/Trabalho/Eficiencias medias.jpg" alt="Eficiencias medias" width="400">
 
 > **OBS.:** O salto apresentado na eficiência mecânica pode ser explicado pela brusca alteração de valores nos parâmetros e pode ser desconsiderado.
 

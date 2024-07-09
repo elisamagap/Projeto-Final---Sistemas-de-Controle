@@ -61,70 +61,61 @@ Para esta etapa, a partir da planta de drone bidirecional fornecida, composta pe
 
 A partir da planta do drone, primeiramente, analisou-se a resposta que o mesmo teria a partir de uma entrada degrau de potência em suas hélices.
 
-
-![img_1_eixoz](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/31ef6e4e-3f2a-4284-a0a8-e4f8f610c972)
+<img src="/Etapa 2/img_1_eixoz.png" alt="eixo z" width="400"> 
 
 Com isso, percebemos que a partir de um certo tempo, definido pelo momento inicial da sua entrada, há um movimento no eixo Z, indicando uma alteração de altitude do drone até chegar no valor máximo estabelecido na entrada degrau. Além disso, destaca-se a não mudança do drone em relação às outras saídas, assim, não se deslocando para esquerda ou direita e, como estão relacionados, consequentemente, não variando seu ângulo de rotação (phi).
 
-![img_2_eixophi](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/61bd6aed-c7df-493c-a824-6098210e229c)
-
-![img_3_eixox](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/0945d7c1-5d0b-426e-bf82-5bf1eb1204a0)
+<img src="/Etapa 2/img_2_eixophi.png" alt="eixo phi" width="400"> <img src="/Etapa 2/img_3_eixox.png" alt="eixo x" width="400"> 
 
 ### Etapa intermediária: descrição de entradas e saídas
 
 A planta do drone bidirecional fornecida conta com três entradas e seis saídas.
 
-![img_4_plantdrone](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/ba64979c-994b-4d81-a210-b7a54e982c70)
+<img src="/Etapa 2/img_4_plantdrone.png" alt="plantdrone" width="500"> 
 
-**Entradas:** são nomeadas como __ômega 1__ e __ômega 2__ na planta do drone ilustrada acima e representam a potência do motor em cada uma das hélices, direita e esquerda. Além disso, o drone também possui como terceira e última entrada __m__, indicando a massa. Dessa forma, com apenas essas três entradas é possível garantir a movimentação do drone em três graus de liberdades, para cima e para baixo, direita e esquerda e rotacionando sobre o próprio eixo, porém de maneira sub-atuada, que será comentado posteriormente.
+**Entradas:** são nomeadas como __Omega 1__ e __Omega 2__ na planta do drone ilustrada acima e representam a potência do motor em cada uma das hélices, direita e esquerda. Além disso, o drone também possui como terceira e última entrada __m__, indicando a massa. Dessa forma, com apenas essas três entradas é possível garantir a movimentação do drone em três graus de liberdades, para cima e para baixo, direita e esquerda e rotacionando sobre o próprio eixo, porém de maneira sub-atuada, que será comentado posteriormente.
 
 **Sáidas:** na representação acima, são nomeadas como __x__ e __xv__, deslocamento lateral e velocidade do deslocamento lateral respectivamente, como __z__ e __vz__, a altitude e a velocidade de deslocamento vertical, e, por fim, as últimas saídas são __phi__ e __p__, o ângulo de rotação e a velocidade angular de rotação.
 
 **Modelo sub-atuado:** como explicado anteriormente, o drone movimenta-se em três graus de liberdade, contudo, possui apenas dois rotores, isso significa que o sistema é sub-atuado, ou seja, para que haja o movimento em um grau de liberdade ele será relacionado ao movimento de outro grau de liberdade. No caso aqui presente, para que seja possível fazer o drone deslocar-se bidirecionalmente, é necessário que haja primeiro uma rotação do mesmo, variando o ângulo phi, para que, só após isso, ocorra o movimento devido a decomposição do vetor de forças.
 
-![img_5_decompdrone](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/868a0ad5-66b8-48b4-87fa-4070e15326a9)
+<img src="/Etapa 2/img_5_decompdrone.png" alt="decompdrone" width="400"> 
 
 ### Primeira Missão - Drone em hover
 
 Essa etapa tem como objetivo manter o drone em uma altitude constante, ou seja, mantê-lo no estado de hover. No nosso caso, a altitude escolhida foi de 5 metros. Abaixo encontra-se o diagrama de blocos feito em _simulink_ para controlar o drone.
 
-![img_6_hovergeral](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/8b6fc0e4-7e8d-4030-a1cc-d52c0108722a)
+<img src="/Etapa 2/img_6_hovergeral.png" alt="hover geral" width="600"> 
 
 Além disso, abaixo mostra-se o controlador do hover em si.
 
-![img_7_hoverespecifico](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/097144ef-e0fc-4f54-94d3-40944c26380a)
+<img src="/Etapa 2/img_7_hoverespecifico.png" alt="hoverespecifico" width="500"> 
 
 Por fim, também é mostrado a configuração do PID utilizado.
 
-![img_8_hoverPID](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/77e4e478-c264-4c3c-8bcb-3879838c1396)
+<img src="/Etapa 2/img_8_hoverPID.png" alt="hover PID" width="500"> 
 
 Com essas configurações é possível obter a resposta da altitude em função do tempo como demonstrado no gráfico abaixo.
 
-![img_9_hovereixoz](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/7b855820-8977-4b36-8a1b-64338ef306bc)
+<img src="/Etapa 2/img_9_hovereixoz.png" alt="hover eixo z" width="400"> 
 
 ### Segunda Missão - Drone deslocar lateralmente ainda em hover
 
 Após o drone atingir a altitude desejada na etapa anterior, requisita-se que o mesmo desloque-se lateralmente até uma posição determinada, neste trabalho cosidera-se até a posição 5 metros positivo. O controle também foi feito a partir do _simulink_ e está demonstrado abaixo.
 
-![img_10_deslocgeral](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/83f983e7-035e-4173-bcfd-6669b94d6fc3)
+<img src="/Etapa 2/img_10_deslocgeral.png" alt="deslocgeral" width="700"> 
 
 Além disso, também encontra-se a montagem do controlador do deslocamento.
 
-![img11_deslocespecifico](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/8a5e0d68-be8f-4299-95ae-e5bce757d8f2)
+<img src="/Etapa 2/img_11_deslocespecifico.png" alt="deslocamento especifico" width="600"> 
 
 E por fim, apresenta-se as configurações dos PIDs 2 e 3 respectivamente.
 
-![img_12_deslocpid2](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/1d80b259-4d12-484b-a60b-7952269a6eb2)
-
-![img_13_deslocpid3](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/519c3e43-ef10-4939-bf61-bcc107f430ae)
+<img src="/Etapa 2/img_12_deslocpid2.png" alt="desloc pid 2" width="400"> <img src="/Etapa 2/img_13_deslocpid3.png" alt="deslocpid3" width="400"> 
 
 Com essas configurações é possível obter os seguintes gráficos de deslocamento lateral (__x__), altitude (__z__) e ângulo de rotação (__phi__) pelo tempo, respectivamente.
 
-![img_14_desloceixox](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/f93274a7-51da-4b9f-8c88-e75d361f5a1c)
-
-![img_15_desloceixoz](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/9b3d57ac-c304-45e5-9685-0a37dc6b4f2c)
-
-![img_16_desloceixophi](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/cdc9237f-89eb-476d-82a3-0f2a47e03177)
+<img src="/Etapa 2/img_14_desloceixox.png" alt="desloc eixo x" width="500"> <img src="/Etapa 2/img_15_desloceixoz.png" alt="" width="500"> <img src="/Etapa 2/img_16_desloceixophi.png" alt="" width="500"> 
 
 A lógica por trás do funcionamento do deslocamento lateral ocorre pelo sistema de feedback utilizando o PID. Isso porque, dado o comando de que o drone deveria ir para a posição de 5 metros deslocado da origem, o PID calcula o módulo da diferença existente entre a posição atual até a desejada e envia um sinal para controlar a potência dos rotores.
 
@@ -134,16 +125,12 @@ Ademais, após a primeira vez que o erro da distância requisitada for zero, um 
 
 ### Terceira Missão - Diminuição repentina de massa do drone
 
-Por fim, a última etapa é a análise dos efeitos da diminuição de massa do drone a partir de uma unidade de tempo, neste exemplo essa diminuição ocorre aos 15 segundos após o início. Vale destacar que todos os efeitos das etapas anteriores estão presentes aqui. Abaixo encontra-se a montagem do sistema utilizando _simulink_.
+Por fim, a última etapa é a análise dos efeitos da diminuição de massa do drone a partir de uma unidade de tempo, neste exemplo essa diminuição ocorre aos 15 segundos após o início. Vale destacar que todos os efeitos das etapas anteriores estão presentes aqui. Abaixo encontra-se a montagem do sistema utilizando SIMULINK.
 
-![img_17_massageral](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/f32d2942-c7ff-4bd8-9f99-b04e012ac834)
+<img src="/Etapa 2/img_17_massageral.png" alt="" width="700"> 
 
 A entrada em degrau apresenta uma diminuição de 300 gramas na massa total do drone, fazendo com que o mesmo após 15 segundos tenha sua massa total como 203 gramas apenas. Nessas condições mostra-se os eixos de deslocamento, altitude e rotação do drone, respectivamente.
 
-![img_18_massaeixox](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/cc7256c5-82a8-493e-a5a9-75288f2632f4)
+<img src="/Etapa 2/img_18_massaeixox.png" alt="" width="500"> <img src="/Etapa 2/img_19_massaeixoz.png" alt="" width="500"> <img src="/Etapa 2/img_20_massaeixophi.png" alt="decompdrone" width="500"> 
 
-![img_19_massaeixoz](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/75a0d9a2-475b-4ee0-9056-861866ac31bb)
-
-![img_20_massaeixophi](https://github.com/elisamagap/Projeto-Final---Sistemas-de-Controle/assets/175115898/2baea7b7-eb2c-4508-b3d4-7995ed129679)
-
-Com os gráficos dos eixos, é possível perceber que a partir dos 15 segundos, apenas o eixo z é alterado. Isso faz sentido, pois o drone continuou com a rotação suficiente para estabilizar um drone de 503 gramas, contudo, como agora possui apenas 203 gramas ele continuará subindo visto que possui mais sustentação que massa. Assim, sua resultante é para cima fazendo com que o mesmo aumente sua altitude. 
+Com os gráficos dos eixos, é possível perceber que a partir dos 15 segundos, apenas o eixo z é alterado. Isso faz sentido, pois o drone continuou com a rotação suficiente para estabilizar um drone de 503 gramas, contudo, como agora possui apenas 203 gramas ele continuará subindo visto que possui mais sustentação que peso. Assim, sua resultante é para cima fazendo com que o mesmo aumente sua altitude. 

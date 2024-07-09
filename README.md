@@ -26,7 +26,7 @@ Baseando-se, então, no esquema apresentado e nos parâmetros do motor **ECX 32 
 
 <img src="/Trabalho/Corrente_Rotacao.jpg" alt="Corrente_Rotacao.jpg" width="400"> <img src="/Trabalho/Simulink_MotorDC.jpg" alt="Simulink_MotorDC" width="400">
 
-Tendo em vista as respostas apresentadas para corrente e para velocidade de rotação, percebe-se que estão de acordo com as determinações nominais de funcionamento fornecidas pelo _data_sheet_ do motor.
+Tendo em vista as respostas apresentadas para corrente e para velocidade de rotação, percebe-se que estão de acordo com as determinações nominais de funcionamento fornecidas pelo _data sheet_ do motor.
 
 Quanto à análise da corrente, percebe-se que, previamente à atuação do degrau de torque externo ($\tau$) em t=10s, a corrente necessária para manter o sistema funcionando é inferior àquela após a aplicação da carga mecânica, visto que esses dois parâmetros se relacionam de maneira diretamente proporcional pela relação $\tau = k_t . I$ (em que $k_t$ é a constante de torque). Sendo assim, quanto maior o torque exigido pela carga externa, maior é a resistência que o motor apresenta no circuito, requisitando aumento da corrente a fim de atender aos critérios de potência do mesmo. 
 

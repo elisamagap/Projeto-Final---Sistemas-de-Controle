@@ -97,7 +97,7 @@ Por fim, também é mostrado a configuração do PID utilizado.
 
 Com essas configurações é possível obter a resposta da altitude em função do tempo como demonstrado no gráfico abaixo.
 
-<img src="/Etapa 2/img_9_hovereixoz.png" alt="hover eixo z" width="400"> 
+<img src="/Etapa 2/img_9_hovereixoz.png" alt="hover eixo z" width="500"> 
 
 ### Segunda Missão - Drone deslocar lateralmente ainda em hover
 
@@ -115,7 +115,7 @@ E por fim, apresenta-se as configurações dos PIDs 2 e 3 respectivamente.
 
 Com essas configurações é possível obter os seguintes gráficos de deslocamento lateral (__x__), altitude (__z__) e ângulo de rotação (__phi__) pelo tempo, respectivamente.
 
-<img src="/Etapa 2/img_14_desloceixox.png" alt="desloc eixo x" width="500"> <img src="/Etapa 2/img_15_desloceixoz.png" alt="" width="500"> <img src="/Etapa 2/img_16_desloceixophi.png" alt="" width="500"> 
+<img src="/Etapa 2/img_14_desloceixox.png" alt="desloc eixo x" width="450"> <img src="/Etapa 2/img_15_desloceixoz.png" alt="" width="450"> <img src="/Etapa 2/img_16_desloceixophi.png" alt="" width="450"> 
 
 A lógica por trás do funcionamento do deslocamento lateral ocorre pelo sistema de feedback utilizando o PID. Isso porque, dado o comando de que o drone deveria ir para a posição de 5 metros deslocado da origem, o PID calcula o módulo da diferença existente entre a posição atual até a desejada e envia um sinal para controlar a potência dos rotores.
 
@@ -131,6 +131,6 @@ Por fim, a última etapa é a análise dos efeitos da diminuição de massa do d
 
 A entrada em degrau apresenta uma diminuição de 300 gramas na massa total do drone, fazendo com que o mesmo após 15 segundos tenha sua massa total como 203 gramas apenas. Nessas condições mostra-se os eixos de deslocamento, altitude e rotação do drone, respectivamente.
 
-<img src="/Etapa 2/img_18_massaeixox.png" alt="" width="500"> <img src="/Etapa 2/img_19_massaeixoz.png" alt="" width="500"> <img src="/Etapa 2/img_20_massaeixophi.png" alt="decompdrone" width="500"> 
+<img src="/Etapa 2/img_18_massaeixox.png" alt="" width="450"> <img src="/Etapa 2/img_19_massaeixoz.png" alt="" width="450"> <img src="/Etapa 2/img_20_massaeixophi.png" alt="decompdrone" width="450"> 
 
 Com os gráficos dos eixos, é possível perceber que a partir dos 15 segundos, apenas o eixo z é alterado. Isso faz sentido, pois o drone continuou com a rotação suficiente para estabilizar um drone de 503 gramas, contudo, como agora possui apenas 203 gramas ele continuará subindo visto que possui mais sustentação que peso. Assim, sua resultante é para cima fazendo com que o mesmo aumente sua altitude. 

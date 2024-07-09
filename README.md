@@ -22,7 +22,7 @@ Pela lei de Kirchoff é possível determinar a EDO de equilíbrio elétrico do s
 
 ### Corrente e Rotação
 
-Baseando-se, então, no esquema apresentado e nos parâmetros do motor **ECX 32 flat UAV** disponibilizados pelo fabricante, foi possível desenvolver uma rotina computacional em MATLAB que apresentasse as saídas para corrente e para rotação do mesmo frente a condições de entrada pré-definidas e um esquema em SIMULINK do sistema. [MotorDC.m](/Trabalho/MotorDC.m)
+Baseando-se, então, no esquema apresentado e nos parâmetros do motor **ECX 32 flat UAV** disponibilizados pelo fabricante, foi possível desenvolver uma rotina computacional em MATLAB ([MotorDC.m](/Trabalho/MotorDC.m)) que apresentasse as saídas para corrente e para rotação do mesmo frente a condições de entrada pré-definidas e um esquema em SIMULINK do sistema ([MotorDC.slx](/Trabalho/simulink_MotorDC.slx)). 
 
 <img src="/Trabalho/Corrente_Rotacao.jpg" alt="Corrente_Rotacao.jpg" width="400"> <img src="/Trabalho/Simulink_MotorDC.jpg" alt="Simulink_MotorDC" width="400">
 

@@ -30,7 +30,7 @@ Quanto à análise da corrente, percebe-se que, previamente à atuação do degr
 
 Quanto ao quesito velocidade de rotação ($\omega$), é deprendido do gráfico de resposta uma diminuição da rotação graças ao mesmo degrau de 0,091 em t=10s. Como a tensão é mantida, o comportamento em questão pode ser explicado pois, com a carga mecânica, o motor, a fim de manter sua potência (definida como $P_{mecanica} = \omega.\tau$), apresenta menor velocidade angular.
 
-### Eficiência mecânica e elétrica
+### Eficiência Mecânica e Elétrica
 
 Em posse das respostas de corrente ($I$) e de velocidade angular($\omega$) e das entradas e parâmetros do motor, foi possível estimar a eficiência do sistema ao longo do tempo. Considerando $\eta=\frac{P_{saída}}{P_{entrada}}$ e determinando as potências do sistema como sendo:
 
